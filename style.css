@@ -1,0 +1,38 @@
+:root {
+    --size: 16;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 8px;
+    
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-box {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+}
+
+#reset {
+    margin-bottom: 8px;
+}
+
+.hovering {
+    background: crimson;
+}

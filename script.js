@@ -7,6 +7,7 @@ function addListeners() {
 
     const box = document.querySelectorAll('.box');
     box.forEach(div => div.addEventListener('mouseover', mouseOverBox));
+    box.forEach(div => div.addEventListener('touchmove', mouseOverBox));
 }
 
 // Add .hovering class to div-box
@@ -29,7 +30,6 @@ function clearGrid() {
 function newGrid() {
 
     const insert = parseInt(prompt("Insert number of squares per side (less than 65 is supported)"));
-    console.log(insert);
 
     if (insert < 65) {
 

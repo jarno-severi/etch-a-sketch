@@ -7,7 +7,6 @@ function addListeners() {
 
     const box = document.querySelectorAll('.box');
     box.forEach(div => div.addEventListener('mouseover', mouseOverBox));
-    box.forEach(div => div.addEventListener('touchmove', mouseOverBox));
 }
 
 // Add .hovering class to div-box

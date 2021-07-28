@@ -2,11 +2,25 @@
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', clearGrid);
 
+// Range input and value indicator
+const range = document.querySelector('#range');
+const pixels = document.querySelector('#pixels');
+const side = document.getElementById('range').value;
+pixels.textContent = side;
+
+// Set grid-size according to range input
+document.documentElement.style.setProperty('--size', side);
+
+range.addEventListener('input', () => {
+    const insert = document.getElementById('range').value;
+    pixels.textContent = insert;
+});
+
 // Add mouse-over listener to all the created div-boxes
 function addListeners() {
 
     const box = document.querySelectorAll('.box');
-    box.forEach(div => div.addEventListener('mouseover', mouseOverBox));
+    box.forEach(div => div.addEventListener('mouseenter', mouseOverBox));
 }
 
 // Add .hovering class to div-box
@@ -28,7 +42,7 @@ function clearGrid() {
 // Remove old grid and create new grid according to user given value
 function newGrid() {
 
-    const insert = parseInt(prompt("Insert number of squares per side (less than 65 is supported)"));
+    const insert = document.getElementById('range').value;
 
     if (insert < 65) {
 
@@ -70,4 +84,6 @@ function removeBoxes() {
 
 
 // Init first grid 16x16
-createGrid(256);
+const loadValue = side * side;
+// console.log(loadValue);
+createGrid(loadValue);

@@ -8,8 +8,13 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="buttons">
         <button id="reset">Reset</button>
+        <label for="grid-size">Grid Size: </label>
+        <input type="range" name="grid-size" id="range" min="2" max="64" step="2" value="16">
+        <span id="pixels"></span>
+    </div>
+    <div class="container">
         <div class="grid-box"></div>
     </div>
     <script src="script.js"></script>
